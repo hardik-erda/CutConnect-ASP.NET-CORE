@@ -1,0 +1,141 @@
+@{
+    ViewData["Title"] = "Shop Details";
+}
+
+<div class="container">
+
+
+    <style>
+        .card-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: gray;
+            margin-bottom: 0.5rem;
+        }
+
+            .card-text span {
+                font-weight: normal;
+                color: black;
+            }
+    </style>
+
+  
+            <div class="container mt-5">
+                <h2 class="text-center">Barber Shop Details</h2>
+                <div class="card mb-3 w-50 m-auto">
+                    <div class="card-body">
+                        <div ID="ShopDetailsPanel" Visible="true" >
+                            <h5 class="card-title" id="nameinfo" >Shop Name</h5>
+                            <p class="card-text">Email: <span id="emailinfo" >email@example.com</span></p>
+                            <p class="card-text">Address: <span id="addressinfo" >email@example.com</span></p>
+                            <p class="card-text">Phone: <span id="phoneinfo" >123-456-7890</span></p>
+                            <p class="card-text">City State: <span id="citystateinfo" >City, State</span></p>
+                            <p class="card-text">Country: <span id="countryinfo" >Country</span></p>
+                            <p class="card-text">Pincode: <span id="pincodeinfo" >123456</span></p>
+                            <p class="card-text">Time Open: <span id="opentimeinfo" >9:00 AM - 5:00 PM</span></p>
+                            <p class="card-text">Created At: <span id="createdatinfo" >01/01/2023</span></p>
+                            <div class="d-flex">
+                                <div class="m-auto ">
+                                    <button class="btn btn-dark " ID="AddServicePanelToggleOn"  OnClick="AddServicePanelToggleOn_Click()"  >Add Services</button>
+                                    <button class="btn btn-info " ID="EditShop"  OnClick="EditShop_Click()"  >Edit Shop</button>
+                                    <button asp-controller="Barber" asp-action="DeleteShop" class="btn btn-danger " ID="DeleteShop"  OnClick="DeleteShop_Click()"  >Delete Shop</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div ID="EditShopDetailsPanel" style="display:None" >
+                            <h2>Fill the Details</h2>
+                            <p class="card-text">
+                                Shop Name :
+                                <input ID="name"  placeholder="Enter Shop Name" />
+                            </p>
+                            <p class="card-text">
+                                Address :
+                                <input ID="address"  placeholder="Enter Shop Address" />
+                            </p>
+                            <p class="card-text">
+                                Email:
+                                <input ID="email"  placeholder="Enter Email" />
+                            </p>
+                            <p class="card-text">
+                                Phone:
+                                <input ID="phone"  placeholder="Enter Phone Number" />
+                            </p>
+                            <p class="card-text">
+                                City State:
+                                <input ID="city"  placeholder="Enter City" />
+                                <input ID="state"  placeholder="Enter State" />
+                            </p>
+                            <p class="card-text">
+                                Country:
+                                <input ID="country"  placeholder="Enter Country" />
+                            </p>
+                            <p class="card-text">
+                                Pincode:
+                                <input ID="pincode"  placeholder="Enter Pincode" />
+                            </p>
+                            <p class="card-text">
+                                Time Open:
+                                <input ID="open_time"  placeholder="Enter Time Open" />
+                            </p>
+
+                            <button class="btn btn-success " ID="SaveShop" OnClick="SaveShop_Click"  >Save</button>
+                        </div>
+
+                        <div ID="AddServicesPanel" style="display:None" >
+                            <h2 class="mt-3">Add a Service</h2>
+                            <p class="card-text">
+                                Service :
+                                <input ID="servicename"  placeholder="Example - Haircut" />
+                            </p>
+                            <p class="card-text">
+                                Price :
+                                <input ID="price"  placeholder="Eg - 60" />
+                            </p>
+                            <button class="btn btn-success " ID="AddServiceButton"  OnClick="AddServiceButton_Click"  >Add</button>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="container w-75 mt-3">
+                    <h2 class="text-center">Services</h2>
+                    <div class="list-group mb-5">
+
+                    <div ID="ServicesPanel" >
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+</div>
+
+<script>
+
+
+ function AddServicePanelToggleOn_Click(){
+        var addServicesPanel = document.getElementById("AddServicesPanel");
+        addServicesPanel.style.display = "Block";
+        document.getElementById("AddShopPanelToggleOn").style.display = "None"
+        
+    }
+
+    function AddServicePanelToggleOff_Click(){
+        var addServicesPanel = document.getElementById("AddServicesPanel");
+        addNewShopPanel.style.display = "None";
+        document.getElementById("AddShopPanelToggleOn").style.display = "Block"
+        
+    }
+ function EditShop_Click(){
+        var editShopDetailsPanel = document.getElementById("EditShopDetailsPanel");
+        editShopDetailsPanel.style.display = "Block";
+        document.getElementById("AddShopPanelToggleOn").style.display = "None"
+        
+    }
+
+   
+
+
+</script>

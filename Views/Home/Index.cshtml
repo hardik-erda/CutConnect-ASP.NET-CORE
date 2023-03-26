@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+  <style>
+    body {
+        max-height:100vh;
+        background-color:black;
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: 'Open Sans', sans-serif;
+    }
+    .home {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3rem;
+      color: white;
+      text-shadow: 1px 1px black;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.2rem;
+      color: white;
+      text-shadow: 1px 1px black;
+      margin-bottom: 3rem;
+    }
+  </style>
+
+<div class="home ">
+    <h1>Find Your Perfect Barber</h1>
+    <p>Discover top-rated barbers in your area</p>
+    <div class="d-flex justify-content-center ">
+      <a asp-controller="Barber" asp-action="Index" class="btn btn-primary mx-3">Are you a Barber?</a>
+      <a asp-controller="Customer" asp-action="Index" class="btn btn-primary mx-3">Are you a Customer?</a>
+    </div>
+</div>
